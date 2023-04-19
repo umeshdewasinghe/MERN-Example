@@ -33,6 +33,9 @@ mongoose.connect(URL)
     console.error('Error connecting to MongoDB:', err);
   });
 
+  const studentRouter = require("./routes/Students.js");
+  app.use("/student",studentRouter);
+
 //connecting to the port
 app.listen(PORT, () => {
     console.log('server is running ');
